@@ -26,4 +26,9 @@ TrupeMoney::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # facebook app
+  config.facebook_application_id     = '562778427090471'
+  config.facebook_application_secret = '165839396faa1c57c94959c36b411c9d'
+
 end
