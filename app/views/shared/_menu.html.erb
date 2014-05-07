@@ -15,12 +15,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% unless user_logged? %>
-          <li><a href="#">Logar com Facebook</a></li>
+          <li><%= link_to "Login com Facebook", "/auth/facebook" %></li>
         <% else %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= @user %> <b class="caret"></b></a>
+            <%= image_tag current_user.photo_url if user_logged? %>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %> <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Logout</a></li>
+              <li><%= link_to "Logout", "signout" %></li>
               <li><a href="#">Profile</a></li>
             </ul>
           </li>
