@@ -15,16 +15,23 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% unless user_logged? %>
-          <li><%= link_to "Login com Facebook", "/auth/facebook" %></li>
+           <%= link_to("/auth/facebook", :class => "btn btn-block btn-social btn-facebook") do %>
+             <i class="fa fa-facebook"></i> Sign in with Facebook
+            <% end %>
         <% else %>
-          <li class="dropdown">
-            <%= image_tag current_user.photo_url if user_logged? %>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %> <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Logout", "signout" %></li>
-              <li><a href="#">Profile</a></li>
-            </ul>
-          </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <%= image_tag current_user.photo_url if user_logged? %></i> <%= current_user.name %> <i class="fa fa-caret-down"></i> 
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="signout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+                <!-- /.dropdown-user -->
+            </li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
