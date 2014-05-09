@@ -2,16 +2,22 @@
 <html>
 	<head>
 	  <title>TrupeMoney</title>
-	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	  <%= csrf_meta_tags %>
+    <!-- Stylesheets -->
+    <%= stylesheet_link_tag  "application" %>
+    <%= yield :stylesheet %>
 	</head>
+
 	<body>
-    <div class="header-menu">
-      <%= render :partial => 'shared/menu' %>
-    </div>
+		<div id="wrapper">
+	    <div class="header-menu">
+	      <%= render :partial => 'shared/menu' %>
+	    </div>
 
-		<%= yield %>
-
+			<%= yield %>
+		</div>
+		<!-- wrapper -->
+		<%= javascript_include_tag "application.js" %>
+    <%= yield :javascript %>
 	</body>
 </html>

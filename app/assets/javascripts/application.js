@@ -10,8 +10,13 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require bootstrap/bootstrap
-//= require_tree .
+
+// Boostrap
+// -------------------------------------------------
+//= require ./public/bootstrap/jquery-1.10.2.js
+//= require ./public/bootstrap/bootstrap.min.js
+//= require ./public/bootstrap/plugins/metisMenu/jquery.metisMenu.js
+//= require ./public/bootstrap/plugins/morris/raphael-2.1.0.min.js
+//= require ./public/bootstrap/plugins/morris/morris.js
+//= require ./public/bootstrap/sb-admin.js
+//= require ./public/bootstrap/demo/dashboard-demo.js
