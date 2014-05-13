@@ -33,4 +33,9 @@ TrupeMoney::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  # facebook app
+  config.facebook_application_id     = '11111'
+  config.facebook_application_secret = '22222'
+
 end
